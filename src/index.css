@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-brand-navy: #0B1B3D;
+  --color-brand-yellow: #FFD700;
+  --color-brand-gray: #5A5A5A;
+  --color-brand-bg: #F8FAFC;
+  --color-brand-light-blue: #C6D5F7;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-slate-900 font-sans antialiased;
+  }
+  
+  h1, h2, h3 {
+    @apply font-display tracking-tight text-brand-navy;
+  }
+}
+
+@layer utilities {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-brand-yellow;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300;
+}
